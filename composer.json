@@ -1,0 +1,21 @@
+{
+    "name": "vendor-name/laravel-skeleton-library",
+    "description": "This is a Skeleton for creating a Laravel Php library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "VendorName\\LaravelSkeletonLibrary\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "author-name",
+            "email": "author@email.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": ">=9.0"
+    },
+    "minimum-stability": "stable"
+}
