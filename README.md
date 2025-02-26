@@ -62,9 +62,45 @@ To publish your package on Packagist, follow these steps:
    composer update
 ```
 
+## Using Symlink for Local Development
+
+If you'd like to link your local version of the Laravel Skeleton Library to an external project without committing the library to Git or modifying the external project's `composer.json`, you can use **Composer's path repository type** with symlinks. 
+
+### Steps to Set Up a Local Symlink with Composer
+
+1. **Set Up the Symlink in the External Project:**
+
+   In the external project's `composer.json`, add a **path repository** configuration pointing to the local directory where the Laravel Skeleton Library is located.
+
+   Example `composer.json` configuration:
+
+   ```json
+   {
+       "repositories": [
+           {
+               "type": "path",
+               "url": "/path/to/your/local/laravel-skeleton-library"
+           }
+       ],
+       "require": {
+           "vendor-name/laravel-skeleton-library": "*"
+       }
+   }
+2. **Create the Symlink:**
+
+   In the external project folder, run the following Composer command:
+```php         
+ composer require vendor-name/laravel-skeleton-library:* --prefer-dist
+```
+This will create a symlink from the external project to your local library, so the external project can use the package without needing to commit or push it to a Git repository.
+
 ## Usage
 
 Once installed, you can start using the components provided by the Laravel Skeleton Library in your Laravel application.
+
+### More Information
+
+For more detailed instructions on creating Laravel packages, you can refer to the official [Spatie Package Skeleton Laravel](https://github.com/spatie/package-skeleton-laravel) repository. It provides a comprehensive guide and skeleton setup for building Laravel packages with best practices.
 
 ## License
 This package is open-source software licensed under the [MIT license](LICENSE).
